@@ -1,0 +1,764 @@
+/* ================= CONTAINER ================= */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 240px;
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.menuItem:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.active {
+  background: #4b6cb7;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #222;
+}
+
+.header p {
+  color: #777;
+  margin-top: 5px;
+}
+
+/* ================= KPI CARDS ================= */
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+}
+
+.cardValue {
+  display: block;
+  margin-top: 15px;
+  font-size: 28px;
+  color: #4b6cb7;
+}
+
+/* ================= CHART ================= */
+
+.chartContainer {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.chartContainer h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ================= TABLES ================= */
+
+.activityContainer {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.activityContainer h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table th {
+  background: #f3f4f6;
+}
+.th {
+  background: #f5f5f5;
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  color: #444;
+}
+
+.td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.infoRow {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #f7f9fc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 900px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/*********** LEAVES *************/
+/* ================= HEADER ================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #222;
+}
+
+/* ================= ADD BUTTON ================= */
+
+.addButton {
+  background: #4b6cb7;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.addButton:hover {
+  background: #3d5aa3;
+  transform: translateY(-1px);
+}
+
+/* ================= SEARCH ================= */
+
+.searchInput {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.searchInput:focus {
+  border-color: #4b6cb7;
+}
+
+/* ================= TABLE ================= */
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.table th {
+  background: #f5f5f5;
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  color: #444;
+  border-bottom: 1px solid #ddd;
+}
+
+.table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.table tr:hover {
+  background: #fafafa;
+}
+
+/* ================= STATUS ================= */
+
+.pending {
+  background: #fff4d6;
+  color: #d48806;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.approved {
+  background: #e6f7ec;
+  color: #1f9254;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rejected {
+  background: #ffe6e6;
+  color: #d11a2a;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ================= ACTIONS ================= */
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ================= EDIT BUTTON ================= */
+
+.editButton {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.editButton:hover {
+  background: #e68900;
+  transform: translateY(-1px);
+}
+
+/* ================= DELETE BUTTON ================= */
+
+.deleteButton {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.deleteButton:hover {
+  background: #c62828;
+  transform: translateY(-1px);
+}
+
+/* ================= MODAL ================= */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;   /* ✅ correct */
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  width: 500px;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.2s ease-in-out;
+
+  max-height: 80vh;   /* ✅ mieux que 90vh */
+  overflow-y: auto;   /* ✅ scroll vertical */
+}
+
+
+.modal p {
+  margin: 0;
+  color: #334155;
+}
+.modal h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* ================= FORM ================= */
+
+.modal input,
+.modal select,
+.modal textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  resize: none;
+}
+
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+  border-color: #4b6cb7;
+}
+
+/* ================= MODAL ACTIONS ================= */
+
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modalActions button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.modalActions button[type="submit"] {
+  background: #4b6cb7;
+  color: white;
+}
+
+.modalActions button[type="submit"]:hover {
+  background: #3d5aa3;
+}
+
+.modalActions button[type="button"] {
+  background: #e0e0e0;
+}
+
+.modalActions button[type="button"]:hover {
+  background: #cfcfcf;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .modal {
+    width: 95%;
+  }
+}
+
+.viewButton {
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.viewButton:hover {
+  background-color: #2980b9;
+}
+
+.viewModal {
+  width: 100%;
+  max-width: 600px;
+  max-height: calc(100vh - 80px); /* IMPORTANT */
+  overflow-y: auto; /* IMPORTANT */
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  animation: fadeIn 0.25s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.modalHeader {
+  position: sticky;
+  top:0;
+  background: white;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.viewContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  transition: 0.2s;
+}
+
+.row:hover {
+  background: #f8fafc;
+}
+
+.label {
+  font-weight: 600;
+  color: #555;
+}
+
+.value {
+  color: #222;
+}
+
+.modalFooter {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeActionBtn {
+  background: #2c3e50;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.closeActionBtn:hover {
+  background: #1a252f;
+}
+
+
+/******************** Plaints ****************/
+
+.viewButton {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.viewButton:hover {
+  background: #217dbb;
+}
+
+.viewBox {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.descriptionBox {
+  margin-top: 10px;
+  padding: 10px;
+  background: white;
+  border-left: 4px solid #3498db;
+  border-radius: 6px;
+}
+
+.modalTitle {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.closeButton {
+  background: #2c3e50;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.closeButton:hover {
+  background: #1a252f;
+}
+
+
+/*******************dropown********************/
+.selectInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.selectInput:hover {
+  border-color: #3498db;
+}
+
+.selectInput:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* OPTION STYLE (limité mais utile) */
+.selectInput option {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* LABEL OPTION PLACEHOLDER */
+.selectInput option[value=""] {
+  color: #999;
+}
+
+
+.settingsPage {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.settingsCard {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.settingsCard h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.settingsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.settingsForm input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.settingsForm input:focus {
+  border-color: #4b6cb7;
+}
+
+.saveBtn {
+  background: #4b6cb7;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.saveBtn:hover {
+  background: #395591;
+}
+
+.switchRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ================= SEE MORE BUTTON ================= */
+
+.seeMoreContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.seeMoreBtn {
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(75, 108, 183, 0.25);
+}
+
+.seeMoreBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(75, 108, 183, 0.35);
+  background: linear-gradient(135deg, #5b7cdb, #223b70);
+}
+
+
+/* ================= TABLE SCROLL ================= */
+
+.tableScroll {
+  max-height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 12px;
+}
+
+/* Scrollbar moderne */
+
+.tableScroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tableScroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.tableScroll::-webkit-scrollbar-thumb {
+  background: #bfc8d8;
+  border-radius: 10px;
+}
+
+.tableScroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
