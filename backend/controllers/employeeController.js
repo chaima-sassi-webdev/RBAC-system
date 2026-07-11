@@ -1,6 +1,6 @@
 const Task = require ("../models/Task");
 const Leave = require("../models/Leave");
-const Plainte = require("../models/plainte");
+const Plainte = require("../models/Plainte");
 const User = require("../models/User");
 exports.getEmployeeStats = async (req, res) => {
     try {
