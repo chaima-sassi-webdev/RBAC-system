@@ -15,7 +15,7 @@ services:
 
 
   backend:
-    image: erp-backend
+    image: chaima-devops/rbac-backend:latest
     container_name: erp-backend-container
     ports:
       - "5000:5000"
@@ -28,7 +28,7 @@ services:
 
 
   frontend:
-    image: erp-frontend
+    image: chaima-devops/rbac-frontend:latest
     container_name: erp-frontend-container
     ports:
       - "3000:3000"
