@@ -1,0 +1,49 @@
+version: "3.8"
+services: 
+
+  mongodb: 
+    image: mongo:7
+    container_name: mongodb
+    restart: always
+
+    ports: 
+      - "27017:27017"
+    volumes: 
+      - mongodb_data:/data/db
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: chaima
+      MONGO_INITDB_ROOT_PASSWORD: chaima123
+      MONGO_INITDB_DATABASE: erp
+    networks: 
+      - erp-network
+
+  backend: 
+    image: chaimahs/backend:latest
+    container_name: backend
+    restart: always
+    ports: 
+      - "5000:5000"
+    depends_on: 
+      - mongodb
+    environment: 
+      PORT: 5000
+      DATABASE_URL: mongodb://chaima:chaima123@mongodb:27017/erp?authSource=admin
+    networks: 
+      - erp-network
+
+  frontend: 
+    image: chaimahs/frontend:latest
+    container_name: frontend
+    restart: always
+    ports: 
+      - "3000:80"
+    depends_on: 
+      - backend
+    networks:
+      - erp-network
+volumes: 
+  mongodb_data:
+
+networks: 
+  erp-network:
+    driver: bridge
