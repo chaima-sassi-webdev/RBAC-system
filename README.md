@@ -26,23 +26,23 @@ The project contains:
 
 Architecture:
 
-                        Grafana
-                            |
-                            |
-                       Prometheus
-                            |
-        -------------------------------------
-        |                  |                |
-        |                  |                |
- Node Exporter          cAdvisor       AlertManager
-        |                  |
-        |                  |
-   Linux Host       Docker Containers
-                            |
-                            |
-                    MERN Application
-                            |
-              React → Express → MongoDB
+                   Grafana
+                       |
+                       |
+                  Prometheus
+                       |
+        --------------------------------
+        |              |               |
+        |              |               |
+ Node Exporter      cAdvisor      AlertManager
+        |              |
+        |              |
+   Linux Host    Docker Containers
+                       |
+                       |
+                MERN Application
+                       |
+          React → Express → MongoDB
 
 
 
