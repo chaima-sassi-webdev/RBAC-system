@@ -1,3 +1,12 @@
+<img width="1164" height="1122" alt="Backend API" src="https://github.com/user-attachments/assets/3d9ddd30-a0a6-4ac2-b557-1d1b52e5cb84" />
+<img width="1854" height="1082" alt="Interface Frontend React" src="https://github.com/user-attachments/assets/22b8efc3-9d09-4a11-a7a2-8435971110bf" />
+<img width="1414" height="191" alt="Containers actifs" src="https://github.com/user-attachments/assets/af772195-d7f2-4ff8-9f98-1839ab224f03" />
+<img width="1165" height="423" alt="Images publiées" src="https://github.com/user-attachments/assets/6915af62-ef40-428b-b4e0-5c6610aa9673" />
+<img width="1165" height="1008" alt="Pipeline réussi" src="https://github.com/user-attachments/assets/e77152b7-2db4-47fb-acba-9d0534ba75d9" />
+<img width="1165" height="679" alt="Targets Prometheus" src="https://github.com/user-attachments/assets/f4f17ead-1c3a-4614-ab9a-4982a812885f" />
+<img width="1849" height="1063" alt="dashboard système" src="https://github.com/user-attachments/assets/0c41a0be-7e31-413d-b5ca-5db471e278ce" />
+<img width="1849" height="1063" alt="Dashboard Docker" src="https://github.com/user-attachments/assets/d475f632-c329-448a-9006-956a7ab540ab" />
+<img width="922" height="421" alt="alert manager" src="https://github.com/user-attachments/assets/5bc2c1a5-e188-44dc-acd5-1c89f7a35d4b" />
 # MERN Stack RBAC System - DevOps Project
 
 ## Overview
