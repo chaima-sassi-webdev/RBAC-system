@@ -1,0 +1,48 @@
+groups:
+
+- name: server-alerts
+
+  rules:
+
+  # CPU élevé
+  - alert: HighCPUUsage
+    expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 50
+    for: 30s
+    labels:
+      severity: warning
+    annotations:
+      summary: "CPU usage high"
+      description: "CPU usage is above 90% for 5 minutes"
+
+
+  # RAM élevée
+  - alert: HighMemoryUsage
+    expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Memory usage high"
+      description: "RAM usage is above 85%"
+
+
+  # Disque presque plein
+  - alert: DiskSpaceLow
+    expr: (node_filesystem_avail_bytes{fstype!="tmpfs"} / node_filesystem_size_bytes{fstype!="tmpfs"}) * 100 < 10
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Disk space low"
+      description: "Less than 10% disk space remaining"
+
+
+  # Container arrêté
+  - alert: ContainerDown
+    expr: absent(container_last_seen{name!=""})
+    for: 2m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Docker container down"
+      description: "A docker container is not running"

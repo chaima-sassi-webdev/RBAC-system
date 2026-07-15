@@ -1,11 +1,15 @@
 # MERN Stack RBAC System - DevOps Project
 
-## Description
+## Overview
 
-This project is a MERN Stack application (MongoDB, Express.js, React.js, Node.js) implementing a Role-Based Access Control (RBAC) system.
+This project is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application implementing a Role-Based Access Control (RBAC) system.
 
-The application is containerized using Docker and integrated with a DevOps workflow including CI/CD, monitoring, and alerting.
+The application is containerized with Docker and integrated into a DevOps workflow including:
 
+- Continuous Integration (CI/CD)
+- Container orchestration
+- Monitoring
+- Alerting
 ---
 
 ## Architecture
@@ -44,34 +48,21 @@ Architecture:
                        |
           React → Express → MongoDB
 
-
-
----
-
-# Features
-
-## Application
-
-- User authentication
-- Role-Based Access Control (RBAC)
-- Protected routes
-- CRUD operations
-- REST API
-
-## DevOps
+### DevOps
 
 - Dockerized frontend, backend, and database
-- Docker Compose orchestration
+- Multi-container deployment using Docker Compose
 - Automated Docker image building
 - CI pipeline with GitHub Actions
+- Docker image publishing
 - Monitoring dashboards
 - Resource usage alerts
 
 ---
 
-# Technologies
+## Technologies
 
-## Development
+### Development
 
 - React.js
 - Node.js
@@ -79,7 +70,7 @@ Architecture:
 - MongoDB
 - JWT Authentication
 
-## DevOps
+### DevOps
 
 - Linux
 - Docker
@@ -87,7 +78,7 @@ Architecture:
 - GitHub Actions
 - Docker Hub
 
-## Monitoring
+### Monitoring
 
 - Prometheus
 - Grafana
@@ -97,56 +88,71 @@ Architecture:
 
 ---
 
-# Run the Project
+## Installation & Running
 
-## Clone repository
+### Clone Repository
 
 ```bash
 git clone <repository-url>
 cd RBAC-system
+```
 
-## Start application with Docker Compose
+### Start Application
+
+```bash
 docker compose up -d
+```
 
-### Check running containers
+### Check Running Containers
+
+```bash
 docker ps
+```
 
-## Access services
+---
 
-Frontend: http://localhost:3000
+## Services
 
-Backend: http://localhost:5000
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:3000 |
+| Backend API | http://localhost:5000 |
+| Prometheus | http://localhost:9090 |
+| Grafana | http://localhost:3001 |
 
-Prometheus: http://localhost:9090
+---
 
-Grafana: http://localhost:3001
-
-Monitoring
+## Monitoring
 
 Prometheus collects metrics from:
 
-Linux host using Node Exporter
-Docker containers using cAdvisor
-
-Grafana provides dashboards for:
-
-CPU usage
-Memory usage
-Disk usage
-Network traffic
-Container resources
-
-AlertManager manages alerts for:
-
-High CPU usage
-High memory usage
-Low disk space
-Container failures
+- Linux host using Node Exporter
+- Docker containers using cAdvisor
 
 
-CI/CD Pipeline
+Grafana dashboards display:
+
+- CPU usage
+- Memory usage
+- Disk usage
+- Network traffic
+- Container resources
+
+
+AlertManager handles alerts for:
+
+- High CPU usage
+- High memory usage
+- Low disk space
+- Container failures
+
+---
+
+## CI/CD Pipeline
+
 Workflow:
 
+```text
 Developer
     |
     v
@@ -156,6 +162,9 @@ GitHub Repository
 GitHub Actions
     |
     v
+Build & Test
+    |
+    v
 Build Docker Images
     |
     v
@@ -163,4 +172,44 @@ Push Images to Docker Hub
     |
     v
 Deployment
+```
 
+---
+
+## Useful Docker Commands
+
+### View containers
+
+```bash
+docker ps
+```
+
+### View logs
+
+```bash
+docker logs <container_name>
+```
+
+### Restart services
+
+```bash
+docker compose restart
+```
+
+### Stop application
+
+```bash
+docker compose down
+```
+
+---
+
+## Project Objective
+
+The objective of this project is to demonstrate the implementation of a production-like MERN application using modern DevOps practices:
+
+- Containerization
+- CI/CD automation
+- Monitoring
+- Alerting
+- Deployment workflow
