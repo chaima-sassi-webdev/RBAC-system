@@ -1,119 +1,166 @@
-# RBAC System - Role Based Access Control
+# MERN Stack RBAC System - DevOps Project
 
-## 1. Description du projet
+## Description
 
-RBAC System est une application web de gestion des utilisateurs basée sur le concept **Role-Based Access Control (RBAC)**.
+This project is a MERN Stack application (MongoDB, Express.js, React.js, Node.js) implementing a Role-Based Access Control (RBAC) system.
 
-Le projet permet de gérer les accès aux ressources d'une application selon les rôles attribués aux utilisateurs. Chaque utilisateur possède des permissions spécifiques permettant de contrôler les fonctionnalités accessibles.
-
-L'objectif principal est de mettre en place un système sécurisé d'authentification et d'autorisation avec une architecture moderne basée sur une application MERN Stack.
-
-Le système utilise une séparation claire entre :
-- le frontend responsable de l'interface utilisateur ;
-- le backend fournissant les APIs REST ;
-- la base de données MongoDB assurant la persistance des données.
-
+The application is containerized using Docker and integrated with a DevOps workflow including CI/CD, monitoring, and alerting.
 
 ---
 
-# 2. Fonctionnalités
+## Architecture
 
-## Authentification
+The project contains:
 
-- Inscription des utilisateurs.
-- Connexion sécurisée.
-- Gestion des sessions utilisateurs.
-- Authentification basée sur JWT (JSON Web Token).
-- Protection des routes backend.
+- Frontend: React.js
+- Backend: Node.js + Express.js
+- Database: MongoDB
+- Containerization: Docker & Docker Compose
+- CI/CD: GitHub Actions
+- Monitoring:
+  - Prometheus
+  - Grafana
+  - Node Exporter
+  - cAdvisor
+  - AlertManager
 
-## Gestion des utilisateurs
+Architecture:
 
-- Création des comptes utilisateurs.
-- Consultation des profils.
-- Modification des informations utilisateurs.
-- Suppression des utilisateurs.
-- Gestion des rôles.
-
-## Gestion des rôles et permissions
-
-- Attribution des rôles aux utilisateurs.
-- Contrôle d'accès selon les permissions.
-- Restriction des fonctionnalités selon le rôle.
-
-Exemples de rôles :
-
-- Administrateur :
-  - Gestion complète du système.
-
-- Employé :
-  - Accès aux fonctionnalités autorisées.
-
-- Utilisateur :
-  - Accès limité aux ressources.
-
-
-## Interface utilisateur
-
-- Interface responsive.
-- Navigation dynamique.
-- Dashboard utilisateur.
-- Design moderne.
-
-
----
-
-# 3. Architecture
-
-Le projet suit une architecture **Client-Server** basée sur MERN Stack.
-
-             Client
-               |
-               |
-          React Frontend
-               |
-               |
-          REST API
-               |
-               |
-        Node.js + Express
-               |
-               |
-          MongoDB Database
+                        Grafana
+                            |
+                            |
+                       Prometheus
+                            |
+        -------------------------------------
+        |                  |                |
+        |                  |                |
+ Node Exporter          cAdvisor       AlertManager
+        |                  |
+        |                  |
+   Linux Host       Docker Containers
+                            |
+                            |
+                    MERN Application
+                            |
+              React → Express → MongoDB
 
 
 
 ---
 
-# 4. Technologies utilisées
+# Features
 
+## Application
 
-## Frontend
+- User authentication
+- Role-Based Access Control (RBAC)
+- Protected routes
+- CRUD operations
+- REST API
+
+## DevOps
+
+- Dockerized frontend, backend, and database
+- Docker Compose orchestration
+- Automated Docker image building
+- CI pipeline with GitHub Actions
+- Monitoring dashboards
+- Resource usage alerts
+
+---
+
+# Technologies
+
+## Development
 
 - React.js
-- React Router
-- JavaScript
-- HTML5
-- CSS3
-- Axios
-
-
-## Backend
-
 - Node.js
 - Express.js
 - MongoDB
-- Mongoose
 - JWT Authentication
-- bcrypt
+
+## DevOps
+
+- Linux
+- Docker
+- Docker Compose
+- GitHub Actions
+- Docker Hub
+
+## Monitoring
+
+- Prometheus
+- Grafana
+- Node Exporter
+- cAdvisor
+- AlertManager
+
+---
+
+# Run the Project
+
+## Clone repository
+
+```bash
+git clone <repository-url>
+cd RBAC-system
+
+## Start application with Docker Compose
+docker compose up -d
+
+### Check running containers
+docker ps
+
+## Access services
+
+Frontend: http://localhost:3000
+
+Backend: http://localhost:5000
+
+Prometheus: http://localhost:9090
+
+Grafana: http://localhost:3001
+
+Monitoring
+
+Prometheus collects metrics from:
+
+Linux host using Node Exporter
+Docker containers using cAdvisor
+
+Grafana provides dashboards for:
+
+CPU usage
+Memory usage
+Disk usage
+Network traffic
+Container resources
+
+AlertManager manages alerts for:
+
+High CPU usage
+High memory usage
+Low disk space
+Container failures
 
 
-## Outils
+CI/CD Pipeline
+Workflow:
 
-- Git / GitHub
-- Visual Studio Code
-- Postman
-- MongoDB Atlas
-<img width="1854" height="1082" alt="Capture d’écran du 2026-07-10 22-29-03" src="https://github.com/user-attachments/assets/5af08622-30fa-4449-9a09-bde6715e2a46" />
-<img width="1854" height="1082" alt="Capture d’écran du 2026-07-10 22-29-34" src="https://github.com/user-attachments/assets/157adb8c-f9b2-415c-af2a-6aa93cd8e74a" />
-<img width="1854" height="1082" alt="Capture d’écran du 2026-07-10 22-27-36" src="https://github.com/user-attachments/assets/989fb0db-98e1-4dac-8a90-7a16f0204122" />
+Developer
+    |
+    v
+GitHub Repository
+    |
+    v
+GitHub Actions
+    |
+    v
+Build Docker Images
+    |
+    v
+Push Images to Docker Hub
+    |
+    v
+Deployment
 
